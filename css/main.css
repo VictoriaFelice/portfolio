@@ -1,0 +1,216 @@
+/* CSS rule:
+selector {
+ property: value;
+}
+All CSS properties have a specified type of value they can accept. Values may be keywords, lengths, colours, numbers, or url's */
+/******************************
+GENERAL
+******************************/
+body { /* this entire piece of code (3 lines: the element selector, the property, the value, and curly braces) is called (=) a "RULE" */
+	font-family: 'Share Tech', sans-serif;  /* font-family = "PROPERTY"; 'Share Tech', sans-serif = "VALUES";  this one line = "DECLARATION" (pair of CSS property and its values) */
+}
+
+a {
+	text-decoration: none; /* none = "KEYWORD". Some properties like margin can take both keywords and numeric values */
+}
+
+#wrapper {
+	max-width: 940px; /* max-width on the wrapper means that the element will never grow larger than a specific maximum width, but it can get smaller if necessary */
+	margin: 0 auto; /* will center a wrapper element inside the browser window.
+	1st value "0" sets the margin on the top and the bottom of the element. 2nd value, auto, will simply fill in any space that's on the left or right side of the margin */
+	padding: 0 5%; /* similar to margin values above. 1st value represents the top and bottom (zero). 2nd value represents the left and right */
+}
+
+img {
+	max-width: 100%; /* will allow all images to fill their parent element */
+}
+
+h3 {
+	font-family: 'Kelly Slab', cursive;
+	margin: 0 0 1em 0;
+}
+
+/******************************
+HEADER
+******************************/
+header {
+	float: left;
+	margin: 0 0 30px 0;
+	padding: 5px 0 0 0;
+	width: 100%;
+}
+
+#logo {
+	text-align: center;
+	margin: 0;
+}
+
+h1 {
+	/* (3 favorite variants for logo) */
+	/* font-family: 'Condiment', cursive; */
+	font-family: 'Raleway', sans-serif;
+	font-style: italic;
+	/* font-family: 'Kelly Slab', cursive; */
+	/* font-family: 'Marck Script', cursive; */
+	font-size: 2.5em;
+	font-weight: normal;
+	line-height: 0.8em; /* set the amount of space between each line of text */
+	margin: 15 0; /* influences the header's height */
+}
+
+h2 {
+	font-family: 'Flamenco', sans-serif;
+	font-size: 1.25em;
+	font-weight: normal; /* basically unbold our headline because headline elements are bold by default */
+	margin: -10 0 0; /* 1st value sets the top. 2nd value sets the left and right. 3rd value sets the bottom.
+	Negative value that we're applying to the top will actually pull the element closer to the other elements around it, rather than pushing it away. This is a common technique when you want elements to be tighter together */
+}
+
+/******************************
+NAVIGATION
+******************************/
+nav {
+	font-family: 'Electrolize', sans-serif;
+	font-size: 1.25em;
+	text-align: center;
+	padding: 10px 0;
+	margin: 20px 0 0;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0 10px;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block; /* allow us to have items side by side, just like inline elements, but they'll retain other block level features, such as having a width and height */
+}
+
+nav a {
+	font-weight: normal;
+	padding: 15px 10px;
+}
+
+/******************************
+FOOTER
+******************************/
+footer { /* footer = "SELECTOR" because it tells the browser which element on the page we want to apply our styling to. Specifically, "ELEMENT SELECTOR", because it's selecting based on the name of the element */
+	font-size: 0.75em;
+	text-align: center;
+	clear: both;
+	padding-top: 50px;
+}
+
+.social-icon {
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+}
+
+/******************************
+PAGE: ABOUT
+******************************/
+.profile-photo {
+	clear: both; /* FF bug fix (image displays incorrectly in Firefox if you remove this line) */
+	display: block; /* this will allow us to use auto margins to center the element on the page (similar to our wrapper div). By default, images are display in line, but we don't want this image to be displayed in line with the rest of the text */
+	max-width: 150px;
+	margin: 0 auto 30px;
+	border-radius: 100%; /* allows you to add rounded corners to an element. You can use pixels here as well. 100% will make corners so round, that the picture will just be a circle */
+}
+
+/******************************
+PAGE: PORTFOLIO
+******************************/
+#gallery {
+	margin: 0;
+	padding: 0;
+	list-style: none; /* this will remove any kind of bullet points from a list */
+}
+
+#gallery li {
+	float: left;
+	width: 45%; /* regardless of the size of the browser window, whether it's on a desktop or a mobile phone, each image will only ever take up 45% of the total width of it's parent element */
+	margin: 2.5%; /* 45 divides into 100 twice with a remainder of 10. That means we'll have two images floated side by side with 10% extra room that we can use to create space between our images (10%/4=2.5%) */
+	background: none;
+}
+#gallery img {
+	filter: drop-shadow(10px 10px 3px rgba(0,0,0,0.3)); [horizontal offset] [vertical offset] [blur radius] [spread radius] [color];
+	/* box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgba(0,0,0,0.2); */
+}
+
+#gallery li  a p { /* styling image captions */
+	margin: 0;
+	padding: 5%;
+	font-size: 0.85em;
+}
+
+/******************************
+PAGE: CONTACT
+******************************/
+.contact-info {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.9em;
+}
+
+.contact-info a {
+	display: block; /* this means that each one of our images or our anchor elements in this case, will take up space (our images have a place to actually be displayed) */
+	min-height: 20px; /* we don't want images to get any shorter than that */
+	background-repeat: no-repeat; /* background images in CSS will always repeat by default, but we want these backgrounds to only display once */
+	background-size: 20px 20px; /* will resize the backgrounds */
+	padding: 0 0 0 30px; /* it will push the text over to the right because there's padding on the left and that will give the images a place to be displayed */
+}
+
+.contact-info li.mail a {
+	background-image: url('../img/mail.png'); /* two dots allow us to go up one directory, so in this case, main.css is inside of the css folder */
+}
+
+
+
+/******************************
+COLORS
+******************************/
+/* Hexadecimal is a base 16 numbering system: 0-9; A, B, C, D, E and F would represent the numbers ten through 15.
+#1E0F22 The first two characters are for red, the second two are for green, and the last two are for blue */
+body {
+	background: #fff; /* background = shorthand property (instead of background-color)*/
+	color: #555; /* hexadecimal shorthand: three digits instead of the normal six. Each  digit will be used as both digits for each color */
+}
+
+header {
+	/* background: #493540; /* variant 1 */
+	background: #170E2D; /* variant 2 */
+}
+
+h1, h2 {
+	color: #fff;
+}
+
+h3 {
+color: #333;
+}
+
+nav {
+	/* background: #1E0F22; /* variant 1 */
+	background: #F75820; /* variant 2 */
+}
+
+nav a, nav a:visited { /* nav a = "DESCENDANT SELECTOR". Descendent Selector - CSS selector that selects all the elements of a given type that are nested inside another type of element. Here it selects the anchor elements that are inside of the nav. We have <nav> then <ul>, then <li>, and then only an anchor element. However, we don't need to include these other elements, we can just jump straight down to the anchor from our nav.
+:visited", :hover = "PSEUDO-CLASS". Dynamic selectors that change based on user interaction with the browser, such as hovering over a link */
+	color: #fff;
+}
+
+nav a.selected , nav a:hover { /* selected = the page that we're currently on */
+	/* color: #E9464B; /* variant 1 */
+	color: black; /* variant 2 */
+}
+
+footer {
+	color: #999;
+}
+
+#gallery li  a p { /* styling image captions */
+	color: #333;
+}

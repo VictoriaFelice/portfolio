@@ -1,0 +1,75 @@
+@media screen and (min-width: 480px) {
+	/******************************
+	TWO COLUNN LAYOUT
+	******************************/
+	#primary {
+		width: 50%;
+		float: left;
+	}
+	#secondary {
+		width: 40%;
+		float: right; /* We're floating our second column to the right, just in case we have the rare case where we end up with some unexpected browser issues. But even if we floated it to the left, it would still appear on the right side of the page, as long as we have the primary and secondary IDs in order in the HTML document */
+	}
+	
+	/******************************
+	ABOUT
+	******************************/
+	.profile-photo {
+		float: left;
+		margin: 0 5% 80px 0;	
+	}
+	
+	/******************************
+	PORTFOLIO
+	******************************/
+	/* 3 (we want three elements side by side) * 5% (each item has a margin of 2.5% on left and right side (2*2.5) = 15% (15% so far for our margins)
+	100% - 15% = 85% (space that's actually taken up by the 3 images)
+	85%/3 = 28.33333333333333 (each image/column) */
+	#gallery li {
+		width: 28.33333333333333%;
+	}
+	#gallery li:nth-child(4n) {  /* pseudo-class selector called "nth-child". This whole expression is simply saying that I'd like any of the styling that's here to be applied to every fourthlist item inside of the gallery element */
+		clear: left;
+	}
+}
+
+@media screen and (min-width: 660px) {
+	/******************************
+	HEADER
+	******************************/
+	nav {
+		background: none;
+		float: right;
+		font-size: 1,5em;
+		margin-right: 5%;
+		text-align: right;
+		width: 45%;
+	}
+	
+	#logo {
+		float: left;
+		margin-left: 5%;
+		text-align: left;
+		width: 45%;
+	}
+	
+	h1 {
+		font-size: 2.5em;
+	}
+	
+	h2 {
+		font-size: 1.125em;
+		margin-bottom: 20px;
+	}
+	
+	header {
+		/* border-bottom: 5px solid #1E0F22; /* variant 1 */
+		border-bottom: 5px solid #F75820; /* variant 2 */
+		margin-bottom: 60px; /* added some additional margin just below our header to separate the content on our site from the header itself */
+	}
+	
+	nav a.selected , nav a:hover { /* selected = the page that we're currently on */
+		/* color: #E9464B; /* variant 1 */
+		color: #FDC264; /* variant 2 */
+	}
+}
