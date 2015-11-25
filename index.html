@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- the character set; typically set to UTF-8(universal character set transformation format, eight bit) to help describe how the page is formatted.
+		Value wrapped in double quotes("utf-8") = "ATTRIBUTE" -->
+		
+		<title>Victoria Felice | Web Developer</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<!-- <link> - the link element links other files to an HTML document, such as CSS or JavaScript files.
+		rel - specifies the relationship between the current HTML document and the link document.
+		normalize is a special CSS file that resets the default browser styles. We use it to basically level out the playing field.
+		normalize.css comes first and it sets up a solid foundation for our custom CSS -->
+		
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Electrolize|Share+Tech|Flamenco|Condiment|Kelly+Slab|Marck+Script|Raleway:700,400">
+		<!-- Google Fonts (google.com/fonts) - A 3rd party font service from Google that provides a large library of fonts that are legitimately licensed. All of the fonts are available for free.
+		Very important that this CSS file gets pasted in below normalize, but just above your main.
+		Also, to pass the W3C validation: change any | symbol in a URL to %7C, which is the encoding for a | symbol -->
+		
+		<link rel="stylesheet" href="css/main.css">
+		<!-- we might be overriding some rules in normalize.css. So, we want main.css to come after normalize -->
+		
+		<link rel="stylesheet" href="css/responsive.css">
+		<!-- we want this file after main.css because we're building on top of our mobile styles to create tablet and desktop styles -->
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<header>
+			<a href="index.html" id="logo"><!-- ids must be UNIQUE and cannot be repeated on a single page -->
+				<h1>Victoria Felice</h1>
+				<h2>Web Developer</h2>
+			</a>
+			<nav><!-- navigation element is a semantic element that simply says, here's our navigation on the page -->
+				<ul><!-- unordered list -->
+					<li><a href="index.html" class="selected">About</a></li><!-- li (list item), HREF (hyper link reference), class is similar to an id, but the difference is that you can have MULTIPLES of a same class on a page -->
+					<li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="wrapper"><!-- div doesn't have any semantic meaning at all. Rather it's a way for us to encapsulate or divide a group of elements -->
+			<section>
+				<img src="img/victoria.JPG" alt="Photograph of Victoria Felice" class="profile-photo">
+					<!-- <img> - The image element is a self closing element with two required attributes. The source (src) attribute points to the image file and the alternate (alt) attribute describes the image, using text.
+					alt provides a brief description of the image for when the image isn't available for some reason. Another reason is to assist site visitors with visual impairments that use special software called a screen reader. This is a relative path: we're telling the browser where this image is located relative to our index.html file -->
+				<h3>About</h3>
+				<p>My name is Victoria Felice and I am a front end web developer, living in Louisville, Kentucky, United States. I specialize in creating dynamic, beautiful and fully responsive web pages and I absolutely love what I do! When I am not designing web pages, I enjoy taking pictures with my DSLR camera, solving math problems, learning new programming languages, and blogging.</p>
+			</section>
+			<footer>
+				<a href="https://twitter.com/CodeVictoria"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+				<p>&copy; 2015 Victoria Felice.</p>
+			</footer>
+		</div>
+	</body>
+</html>
